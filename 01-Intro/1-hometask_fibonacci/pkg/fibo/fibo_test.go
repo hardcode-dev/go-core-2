@@ -1,10 +1,13 @@
-package fibonacci
+package fibo_test
 
-import "testing"
+import (
+	"go-core-2/01-Intro/1-hometask_fibonacci/pkg/fibo"
+	"testing"
+)
 
-func TestFindFibonacci(t *testing.T) {
+func TestNum(t *testing.T) {
 	type args struct {
-		number int
+		n int
 	}
 	tests := []struct {
 		name    string
@@ -15,7 +18,7 @@ func TestFindFibonacci(t *testing.T) {
 		{
 			name: "negative",
 			args: args{
-				number: -1,
+				n: -1,
 			},
 			want:    1,
 			wantErr: false,
@@ -23,7 +26,7 @@ func TestFindFibonacci(t *testing.T) {
 		{
 			name: "zero",
 			args: args{
-				number: 0,
+				n: 0,
 			},
 			want:    1,
 			wantErr: false,
@@ -31,7 +34,7 @@ func TestFindFibonacci(t *testing.T) {
 		{
 			name: "one",
 			args: args{
-				number: 1,
+				n: 1,
 			},
 			want:    1,
 			wantErr: false,
@@ -39,7 +42,7 @@ func TestFindFibonacci(t *testing.T) {
 		{
 			name: "eight",
 			args: args{
-				number: 8,
+				n: 8,
 			},
 			want:    21,
 			wantErr: false,
@@ -47,7 +50,7 @@ func TestFindFibonacci(t *testing.T) {
 		{
 			name: "twenty",
 			args: args{
-				number: 20,
+				n: 20,
 			},
 			want:    6765,
 			wantErr: false,
@@ -55,20 +58,20 @@ func TestFindFibonacci(t *testing.T) {
 		{
 			name: "twenty one",
 			args: args{
-				number: 21,
+				n: 21,
 			},
 			wantErr: true,
 		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := FindFibonacci(tt.args.number)
+			got, err := fibo.Num(tt.args.n)
 			if (err != nil) != tt.wantErr {
-				t.Errorf("FindFibonacci() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("Num() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
 			if got != tt.want {
-				t.Errorf("FindFibonacci() = %v, want %v", got, tt.want)
+				t.Errorf("Num() = %v, want %v", got, tt.want)
 			}
 		})
 	}

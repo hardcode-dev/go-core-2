@@ -2,17 +2,18 @@ package main
 
 import (
 	"fmt"
-	"go-core-2/01-Intro/1-hometask_fibonacci/pkg/fibonacci"
+	"go-core-2/01-Intro/1-hometask_fibonacci/pkg/fibo"
 )
 
 func main() {
-	var number int
-	fmt.Scanf("%d", &number)
+	fmt.Println("Please type in your number and press Enter")
+	var n int
+	fmt.Scanf("%d", &n)
 
-	result, err := fibonacci.FindFibonacci(number)
+	res, err := fibo.Num(n)
 	if err != nil {
-		fmt.Println(err.Error())
+		fmt.Println("Error:", err.Error())
 		return
 	}
-	fmt.Println(result)
+	fmt.Printf("The calculated result is %d\n", res)
 }
