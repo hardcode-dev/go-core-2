@@ -6,14 +6,37 @@ import (
 	"log"
 )
 
+type point struct {
+	X int
+	Y int
+}
+
+const (
+	a = iota << 1
+	b
+	c
+	d
+)
+
 func main() {
+
+	println(a, b, c, d)
+
+	var p point = point{
+		X: 10,
+		Y: 10,
+	}
+	_ = p
 	x := 10
+	x++
+	x--
+
 	f := func() {
 		log.Println("X доступна из замыкания:", x)
 	}
 	f()
 	printInts(6, 2, 3, 4)
-	res, err := division(10, 5)
+	res, err := division(10, 3)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -27,7 +50,7 @@ func printInts(ints ...int) {
 	fmt.Println()
 }
 
-func division(x, y float64) (float64, error) {
+func division(x, y int) (int, error) {
 	if y == 0 {
 		return 0, errors.New("ошибка: деление на ноль")
 	}

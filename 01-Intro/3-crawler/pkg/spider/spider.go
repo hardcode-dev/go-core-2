@@ -13,9 +13,7 @@ import (
 // с учётом глубины перехода по ссылкам, переданной в depth.
 func Scan(url string, depth int) (data map[string]string, err error) {
 	data = make(map[string]string)
-
 	parse(url, url, depth, data)
-
 	return data, nil
 }
 

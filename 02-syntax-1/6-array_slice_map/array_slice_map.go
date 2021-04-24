@@ -5,6 +5,7 @@ import "fmt"
 func main() {
 	var array = [...]int{1, 2, 3, 4, 5} // массив
 	var slice []int = []int{1}          // слайс
+	_ = slice[len(slice)-1]
 	fmt.Println("array", array, len(array), cap(array))
 	fmt.Println("slice", slice, len(slice), cap(slice))
 	c := cap(slice)
