@@ -20,6 +20,8 @@ func newCustomErr(msg string) customErr {
 	return customErr{msg: msg}
 }
 
+var ErrNotExists = newCustomErr("не найдено")
+
 func main() {
 	err := errors.New("пример создания ошибки с помощью пакета errors") // с маленькой буквы!
 	fmt.Println(err.Error())
@@ -27,16 +29,15 @@ func main() {
 	err = fmt.Errorf("пример создания ошибки с помощью пакета fmt")
 	fmt.Println(err) // почему без вызова метода Error()?
 
-	var cErr customErr
 	val, err := envVar("1234")
-	if err == cErr {
+	if err == ErrNotExists {
 		fmt.Println("customErr")
 	}
 	if err != nil {
 		fmt.Println(err)
 	}
 	fmt.Println(val)
-	err = cErr // корректно
+	err = ErrNotExists // корректно
 }
 
 // envVar возвращает переменную окружения, заданную по имени.
@@ -44,7 +45,7 @@ func main() {
 func envVar(name string) (string, error) {
 	val := os.Getenv(name)
 	if val == "" {
-		return "не найдено", newCustomErr("не найдено")
+		return "не найдено", ErrNotExists
 	}
 	return val, nil
 }

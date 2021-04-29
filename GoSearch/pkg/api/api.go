@@ -11,7 +11,7 @@ import (
 	"net/http/pprof"
 	"time"
 
-	"go-core-2/gosearch/pkg/engine"
+	"go-core-2/GoSearch/pkg/engine"
 
 	"github.com/gorilla/mux"
 	"github.com/prometheus/client_golang/prometheus"

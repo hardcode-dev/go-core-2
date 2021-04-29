@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	const bufSize = 10
+	/*const bufSize = 10
 
 	var bufchan chan int = make(chan int, bufSize) // буферизированный канал
 	bufchan <- 10                                  // неблокирующая операция
@@ -19,10 +19,14 @@ func main() {
 
 	for val := range bufchan {
 		fmt.Println("получено из канала:", val)
-	}
+	}*/
 
 	ch := make(chan int) // переменная типа канал, принимающий int
-	ch <- 100            // блок
-	val = <-ch           // блок
-	fmt.Println(val)
+	go func() {
+		ch <- 100 // блок
+	}()
+	val1 := <-ch // блок
+	close(ch)
+	fmt.Println(val1)
+	ch <- 4
 }

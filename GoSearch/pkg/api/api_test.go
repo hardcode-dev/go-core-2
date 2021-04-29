@@ -6,9 +6,9 @@ import (
 	"os"
 	"testing"
 
-	"go-core-2/gosearch/pkg/engine"
-	"go-core-2/gosearch/pkg/index/hash"
-	"go-core-2/gosearch/pkg/storage/memstore"
+	"go-core-2/GoSearch/pkg/engine"
+	"go-core-2/GoSearch/pkg/index/hash"
+	"go-core-2/GoSearch/pkg/storage/memstore"
 
 	"github.com/gorilla/mux"
 )

@@ -1,11 +1,8 @@
 package storage
 
-// Хранилище отсканированных документов.
+import "go-core-2/GoSearch/pkg/crawler"
 
-import (
-	"go-core-2/gosearch/pkg/crawler"
-)
-
+// Храниище отсканированных документов.
 // Interface определяет контракт хранилища данных.
 type Interface interface {
 	Docs([]int) []crawler.Document
