@@ -60,7 +60,7 @@ func TestSearch(t *testing.T) {
 func sampleData() []int {
 	rand.Seed(time.Now().UnixNano())
 	var data []int
-	for i := 0; i < 1_000; i++ {
+	for i := 0; i < 1_000_000; i++ {
 		data = append(data, rand.Intn(1000))
 	}
 
