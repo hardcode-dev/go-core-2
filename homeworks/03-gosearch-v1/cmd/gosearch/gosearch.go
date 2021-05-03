@@ -3,8 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
-	"go-core-2/homeworks/02-gosearch-v1/pkg/crawler"
-	"go-core-2/homeworks/02-gosearch-v1/pkg/crawler/spider"
+	"go-core-2/homeworks/03-gosearch-v1/pkg/crawler"
+	"go-core-2/homeworks/03-gosearch-v1/pkg/crawler/spider"
 	"log"
 	"strings"
 )
