@@ -34,7 +34,7 @@ func main() {
 		s.store.Append(od)
 	}
 
-	// s.store.Print()
+	s.store.Sort()
 
 	fmt.Println("Search results:")
 	docs := s.store.Search(token)
