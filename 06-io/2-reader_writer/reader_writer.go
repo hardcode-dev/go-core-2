@@ -11,7 +11,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	b, err := get(f)
+	b, err := get(os.Stdin)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -20,7 +20,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	err = store(f, b)
+	err = store(os.Stdout, b)
 	if err != nil {
 		log.Fatal(err)
 	}

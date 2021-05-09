@@ -24,13 +24,14 @@ func main() {
 	fmt.Printf("Данные файла:\n%s\n", data)
 
 	// вариант чтения с помощью io.Reader
-	file, err := os.Open(f.Name())
+	var file *os.File
+	file, err = os.Open(f.Name())
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer file.Close()
 	// что здесь не правильно?
-	buf := make([]byte, 1024)
+	buf := make([]byte, 4)
 	n, err := file.Read(buf)
 	if err != nil {
 		log.Fatal(err)
