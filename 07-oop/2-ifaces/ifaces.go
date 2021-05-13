@@ -24,6 +24,10 @@ func (dbl *DBLogger) Log(msg string) error {
 	return nil
 }
 
+type CustomLogger struct {
+	Logger
+}
+
 // MemLogger - заглушка журнала в памяти для тестов.
 type MemLogger int
 

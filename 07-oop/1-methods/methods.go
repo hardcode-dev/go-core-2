@@ -26,7 +26,8 @@ func main() {
 	var course Course
 	course.SetAuthor("Alan A. Donovan")
 	fmt.Println(course.Author()) // Что будет выведено здесь?
-	// The rule about pointers vs. values for receivers is that value methods can be invoked on pointers and values,
+	// The rule about pointers vs. values for receivers is that value methods
+	// can be invoked on pointers and values,
 	// but pointer methods can only be invoked on pointers.
 }
 
