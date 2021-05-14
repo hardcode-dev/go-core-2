@@ -7,7 +7,7 @@ import (
 // Тест всегда имеет определённую сигнатуру: TestFuncName(t *testing.T) { ... }
 func Test_sum(t *testing.T) {
 	if !testing.Short() {
-		t.Skip("только с флагом `-short`")
+		t.SkipNow()
 	}
 	a, b := 3, 4     // тестовый пример
 	got := sum(a, b) // вызов тестируемого кода

@@ -25,6 +25,13 @@ func Test_reverse(t *testing.T) {
 			},
 			want: "fedCBA",
 		},
+		{
+			name: "Тест №3",
+			args: args{
+				s: "",
+			},
+			want: "",
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {

@@ -2,27 +2,35 @@ package tdd
 
 import "testing"
 
-func Test_fact(t *testing.T) {
+func TestFact(t *testing.T) {
+	type args struct {
+		n int
+	}
 	tests := []struct {
 		name string
-		n    int
+		args args
 		want int
 	}{
 		{
-			name: "Тест №1",
-			n:    1,
+			name: "Test #1",
+			args: args{n: 1},
 			want: 1,
 		},
-		/*{
-			name: "Тест №2",
-			n:    5,
-			want: 120,
-		},*/
+		{
+			name: "Test #2",
+			args: args{n: 3},
+			want: 6,
+		},
+		{
+			name: "Test #3",
+			args: args{n: 0},
+			want: 1,
+		},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if got := fact(tt.n); got != tt.want {
-				t.Errorf("fact() = %v, want %v", got, tt.want)
+			if got := Fact(tt.args.n); got != tt.want {
+				t.Errorf("Fact() = %v, want %v", got, tt.want)
 			}
 		})
 	}
