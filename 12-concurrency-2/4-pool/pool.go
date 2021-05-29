@@ -41,7 +41,6 @@ func main() {
 			memory := pool.Get().(*[]byte)
 			defer pool.Put(memory)
 		}()
-
 	}
 	wg.Wait()
 

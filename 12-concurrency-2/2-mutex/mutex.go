@@ -23,7 +23,7 @@ func main() {
 	var mux sync.RWMutex
 	var wg sync.WaitGroup
 	var n int
-	const N = 100_000
+	const N = 1_000
 	wg.Add(N)
 	for i := 0; i < N; i++ {
 		if i%10 == 0 {
