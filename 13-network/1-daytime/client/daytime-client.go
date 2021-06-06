@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
+	"io"
 	"log"
 	"net"
 )
@@ -13,7 +13,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	msg, err := ioutil.ReadAll(conn)
+	msg, err := io.ReadAll(conn)
 	if err != nil {
 		log.Fatal(err)
 	}

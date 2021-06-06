@@ -10,8 +10,8 @@ import (
 func main() {
 	// сторонний маршрутизатор из пакета Gorilla
 	mux := mux.NewRouter()
-	// регистрация обработчика для URL `/` в маршрутизаторе по умолчанию
-	mux.HandleFunc("/{name}", mainHandler).Methods(http.MethodGet)
+	// регистрация обработчик}а для URL `/` в маршрутизаторе по умолчанию
+	mux.HandleFunc("/{first}/{last}", mainHandler).Methods(http.MethodGet)
 	// старт HTTP-сервера на порту 8080 протоколоа TCP с маршрутизатором запросов по умолчанию
 	http.ListenAndServe(":8080", mux)
 }
@@ -25,5 +25,5 @@ func mainHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "ошибка при обработке шаблона", http.StatusInternalServerError)
 		return
 	}
-	t.Execute(w, vars["name"])
+	t.Execute(w, vars["first"]+vars["last"])
 }

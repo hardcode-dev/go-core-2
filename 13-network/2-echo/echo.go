@@ -10,6 +10,7 @@ import (
 
 // обработчик подключения
 func handler(conn net.Conn) {
+	defer conn.Close()
 	r := bufio.NewReader(conn)
 	for {
 		msg, _, err := r.ReadLine()
@@ -37,6 +38,6 @@ func main() {
 		if err != nil {
 			log.Fatal(err)
 		}
-		handler(conn)
+		go handler(conn)
 	}
 }

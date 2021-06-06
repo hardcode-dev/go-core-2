@@ -12,6 +12,7 @@ import (
 
 // обработчик подключения
 func handler(conn net.Conn) {
+	defer conn.Close()
 	conn.SetDeadline(time.Now().Add(time.Second * 5))
 	r := bufio.NewReader(conn)
 	for {
@@ -30,7 +31,7 @@ func handler(conn net.Conn) {
 
 func main() {
 	// регистрация сетевой службы
-	listener, err := net.Listen("tcp4", ":8080")
+	listener, err := net.Listen("tcp4", ":12345")
 	if err != nil {
 		log.Fatal(err)
 	}
