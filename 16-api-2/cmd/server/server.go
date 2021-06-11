@@ -3,7 +3,7 @@ package main
 import (
 	"net/http"
 
-	"go-core/17-api-2/pkg/api"
+	"go-core-2/16-api-2/pkg/api"
 
 	"github.com/gorilla/mux"
 )

@@ -23,7 +23,7 @@ func (api *API) newBook(w http.ResponseWriter, r *http.Request) {
 	defer cancel()
 	// производный контекст с ключом (№ запроса)
 	ctx := context.WithValue(timeout, "requestID", rand.Intn(1_000_000_000))
-	// длительная перация, принимающая контекст
+	// длительная операция, принимающая контекст
 	//data := getLotsOfDataFromDatabase(ctx)
 	_ = ctx
 
